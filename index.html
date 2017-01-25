@@ -1,75 +1,116 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>World Tic-Tac-Toe!</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
       <!-- Do not add `link` tags unless you know what you are doing -->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
-      <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+  <body class="container-fluid">
+    <div class="jumbotron">
+      <div class="container">
+        <h1>World Tic-Tac-Toe!</h1>
+        <p>Enjoy the old-school fun time-killer game!</p>
+<!-- Buttons to sign up and sign in -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalUp" data-whatever="@mdo">Sign Up!</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalIn" data-whatever="@fat">Sign In!</button>
+<!--Modal form to sign Up!  -->
+<div class="modal fade" id="exampleModalUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <form id="sign-up">
+          <fieldset>
+            <h4 class="modal-title" id="exampleModalLabel">Create an account!</h4>
+            <label>
+              Email
+              <input type = "text" name ="credentials[email]">
+            </label>
+            <label>
+              Password
+              <input type ="password" name ="credentials[password]">
+            </label>
+            <label>
+              Password Confirmation
+              <input type ="password" name ="credentials[password_confirmation]">
+            </label>
+            <input type="submit" name="submit" value="Sign up!">
+          </fieldset>
+        </form>
+      </div>
+<!--Modal Footer  -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Sign Up!</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal form to Sign in!  -->
+<div class="modal fade" id="exampleModalIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <form id="sign-in">
+          <fieldset>
+            <h4 class="modal-title" id="exampleModalLabel">Let's play!</h4>
+            <label>
+              Email
+              <input type = "text" name ="credentials[email]">
+            </label>
+            <label>
+              Password
+              <input type ="password" name ="credentials[password]">
+            </label>
+            <input type="submit" name="submit" value="Sign In!">
+          </fieldset>
+        </form>
+      </div>
+<!--Modal sign in footer  -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Sign In!</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalChange" data-whatever="@getbootstrap">Change Password!</button>
+      </div>
+      <!--Modal Form to change password within sign in modal -->
+      <div class="modal fade" id="exampleModalChange" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <form id="change-password">
+                <fieldset>
+                  <legend>Change Password!</legend>
+                  <label>
+                    Current Password
+                    <input type = "password" name ="passwords[old]">
+                  </label>
+                  <label>
+                    New Password
+                    <input type ="password" name ="passwords[new]">
+                  </label>
+                  <input type="submit" name="submit" value="Change Password!">
+                </fieldset>
+              </form>
+            </div>
+            <!--Modal footer to change password  -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Change Password!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
 
-      <body class="container-fluid">
-      <h1>API Token Auth</h1>
-      <form id="sign-up">
-        <fieldset>
-          <legend>Sign up!</legend>
-          <label>
-            Email
-            <input type = "text" name ="credentials[email]">
-          </label>
-          <label>
-            Password
-            <input type ="password" name ="credentials[password]">
-          </label>
-          <label>
-            Password Confirmation
-            <input type ="password" name ="credentials[password_confirmation]">
-          </label>
-          <input type="submit" name="submit" value="Sign up!">
-        </fieldset>
-      </form>
-      <form id="sign-in">
-        <fieldset>
-          <legend>Sign in!</legend>
-          <label>
-            Email
-            <input type = "text" name ="credentials[email]">
-          </label>
-          <label>
-            Password
-            <input type ="password" name ="credentials[password]">
-          </label>
-          <input type="submit" name="submit" value="Sign in!">
-        </fieldset>
-      </form>
-      <form id="change-password">
-        <fieldset>
-          <legend>Change Password!</legend>
-          <label>
-            Current Password
-            <input type = "password" name ="passwords[old]">
-          </label>
-          <label>
-            New Password
-            <input type ="password" name ="passwords[new]">
-          </label>
-          <input type="submit" name="submit" value="Change Password!">
-        </fieldset>
-      </form>
+
+
       <form id="sign-out">
         <fieldset>
           <legend>Sign Out!</legend>
