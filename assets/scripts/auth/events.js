@@ -42,7 +42,7 @@ const onChangePassword = function (event) {
 };
 
 const onSignOut = function (event) {
-  event.prevdntDefault();
+  event.preventDefault();
 
   api.signOut()
   .then(() => {
