@@ -1,11 +1,15 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-.X {
-  color: black;
-}
-.O {
-  color:white;
+// .x {
+//   color: black;
+// }
+// .o {
+//   color:white;
+// }
+
+.btn btn-primary hd {
+  visibility: hidden;
 }
 // .col-xs-4 {
 //   border: 5px solid #CD919E;

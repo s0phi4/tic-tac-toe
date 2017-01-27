@@ -3,7 +3,7 @@
 // require('./assets/styles/index.scss');
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
-// const game = require('./yenGame');
+
 
 
 
@@ -15,10 +15,12 @@ $(() => {
 // const example = require('./example');
 
 const authEvents = require('./auth/events.js');
+const events_game = require('./game/events_game.js');
 
 // On document ready
 $(() => {
  authEvents.addHandlers();
+ events_game.gameHandlers();
 
 
 
@@ -48,6 +50,7 @@ const resetGame = function () {
   for (let i = 0; i < board.length; i++) {
     board[i] = '';
     $('.sq').text('');
+    $('.message').text ('');
   }
 };
 
@@ -63,7 +66,7 @@ const checkWinning = function () {
       board[2]=== player1 && board[5]=== player1 && board[8]=== player1) {
  console.log('X wins');
  $('.message').text ('X is the winner!');
-//reset message?
+
  } else if (
        board[0]=== player2 && board[1]=== player2 && board[2]=== player2 ||
        board[3]=== player2 && board[4]=== player2 && board[5]=== player2 ||
@@ -75,7 +78,7 @@ const checkWinning = function () {
        board[2]=== player2 && board[5]=== player2 && board[8]=== player2) {
   console.log ('O wins');
   $('.message').text ('O is the winner!');
-  //reset message?
+
 } else if (board.includes ('') === false) {
    console.log ('Draw');
    $('.message').text ('It is a draw!');
