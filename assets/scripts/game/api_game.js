@@ -1,7 +1,9 @@
 'use strict';
 const config = require('../config');
 const store = require('../store');
-//get game
+const ticStore = require('../tictacstore');
+
+//get games
 const index = function () {
   return $.ajax( {
     url:config.apiOrigin + '/games',
@@ -13,7 +15,6 @@ const index = function () {
 };
 //create game
 const createGame = function () {
-  console.log('game is', index);
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',
@@ -22,25 +23,33 @@ const createGame = function () {
     },
   });
 };
-//Show Game
-const showGame = function (id) {
-return $.ajax ({
-  url:config.apiOrigin + '/games/:id' + id,
-  method: 'GET',
-  headers: {
-    Authorization: `Token token=${store.user.token}`,
-  },
-});
-};
 
-const updateGame = function(data) {
+const showGame = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+  });
+};
+//Update
+const updateGame = function(index, currentPlayer, over) {
   return $.ajax ({
-    url: config.apiOrigin + '/games/:id',
+    url: config.apiOrigin + '/games/' + ticStore.game.id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
     },
-    data,
+    data: {
+      "game": {
+        "cell": {
+          "index": index,
+          "value": currentPlayer,
+        },
+        "over": over,
+      }
+    }
   });
 };
 

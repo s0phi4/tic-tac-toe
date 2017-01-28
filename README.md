@@ -1,6 +1,16 @@
-Yen's Tic-Tac-Toe
+<!-- Yen's Tic-Tac-Toe
 
-Instructions
+Title of game
 
-In this game app, you are able to login and play the most old-school game!"Tic-Tac-Toe",
-here are some instructions for you to access the game and play.
+-Link to Github repo.
+
+-Technologies used
+
+-Development process
+  -Problem-solving strategy
+
+-Unsolved problems
+
+-Wireframes link
+
+-User stories -->
