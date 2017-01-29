@@ -34,9 +34,9 @@ const showGame = function (id) {
   });
 };
 //Update
-const updateGame = function(index, currentPlayer, over) {
+const updateGame = function(id, currentPlayer, over) {
   return $.ajax ({
-    url: config.apiOrigin + '/games/' + ticStore.game.id,
+    url: config.apiOrigin + '/games/' + id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,

@@ -42,7 +42,6 @@ $(() => {
    $('.play').hide();
    $('.top').show();
  });
-
 });
 
 //Game Logic starts here
