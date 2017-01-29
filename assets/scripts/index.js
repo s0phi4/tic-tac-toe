@@ -26,21 +26,26 @@ $(() => {
 
 //Hides play section
  $('.play').hide();
+
+ //After sign up-Hide sign up box
+ $('.su').on('click', function() {
+   $('.next').text('Great! Now exit this box, sign in and kill some time!');
+ });
  //After sign in click-submit-> Show play section
  $('.signInNow').on ('click',function (){
     $('.play').show();
-
+    $('.top').hide();
   });
-//
+
  //After sign out click-> Hide play section
-$('.out').on ('click', function (){
-  $('.play').hide();
-});
- // $('.message').removeClass();
- // $('.message').addClass();
+ $('.out').on ('click', function (){
+   $('.play').hide();
+   $('.top').show();
+ });
+
 });
 
-
+//Game Logic starts here
 //Declaring variables for board, and players
 const board = ['','','','','','','','',''];
 let player1 = 'X';

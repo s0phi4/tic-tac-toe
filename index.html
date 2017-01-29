@@ -15,10 +15,10 @@
       <h1>World Tic-Tac-Toe!</h1>
       <p>Enjoy the old-school time-killer game!</p>
 <!-- Buttons to sign up and sign in -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalUp" data-whatever="@mdo">Sign Up!</button>
-  <button type="button" class="btn btn-primary" id="getAll" data-toggle="modal" data-target="#exampleModalIn" data-whatever="@fat">Sign In!</button>
+  <button type="button" class="btn btn-primary top" data-toggle="modal" data-target="#exampleModalUp" data-whatever="@mdo">Sign Up!</button>
+  <button type="button" class="btn btn-primary top" id="getAll" data-toggle="modal" data-target="#exampleModalIn" data-whatever="@fat">Sign In!</button>
   <!--Modal form to sign Up!  -->
-  <div class="modal fade" id="exampleModalUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal fade sU" id="exampleModalUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -38,7 +38,8 @@
               Password Confirmation
               <input type ="password" name ="credentials[password_confirmation]">
             </label>
-            <input type="submit" class="btn btn-primary" name="submit" value="Sign up!">
+            <input type="submit" class="btn btn-primary su" name="submit" value="Sign up!">
+            <div class ="next"></div>
           </fieldset>
         </form>
       </div>
@@ -99,7 +100,7 @@
   </div>
 </div>
 <!--Board and game buttons section -->
-<div class = container-game>
+<div class = "container game">
 <div class ="play">
     <!--Sign out -->
     <form id="sign-out">
@@ -111,23 +112,23 @@
     <div class='container' id='board'>
       <div class="row">
         <div class="col-md-6">
-          <a class= "btn btn-info sq" id="0"></a>
-          <a class= "btn btn-info sq" id="1"></a>
-          <a class= "btn btn-info sq" id="2"></a>
+          <a class= "btn btn-info btn-lg sq" id="0"></a>
+          <a class= "btn btn-info btn-lg sq" id="1"></a>
+          <a class= "btn btn-info btn-lg sq" id="2"></a>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6">
-          <a class= "btn btn-info sq" id="3"></a>
-          <a class= "btn btn-info sq" id="4"></a>
-          <a class= "btn btn-info sq" id="5"></a>
+          <a class= "btn btn-info btn-lg sq" id="3"></a>
+          <a class= "btn btn-info btn-lg sq" id="4"></a>
+          <a class= "btn btn-info btn-lg sq" id="5"></a>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6">
-          <a class= "btn btn-info sq" id="6"></a>
-          <a class= "btn btn-info sq" id="7"></a>
-          <a class= "btn btn-info sq" id="8"></a>
+          <a class= "btn btn-info btn-lg sq" id="6"></a>
+          <a class= "btn btn-info btn-lg sq" id="7"></a>
+          <a class= "btn btn-info btn-lg sq" id="8"></a>
         </div>
       </div>
     </div>
@@ -140,15 +141,15 @@
   </div>
 </div>
   <footer>
-      <p>Copyright © Yenifer A. Prajapati. 2017 All Rights Reserved</p>
       <p>
         <a href="https://github.com/yenpraja610" target='_blank'>
-          <h5>Yen's github</h5>
+          <h4>See more projects here!</h4>
         </a>
         <a href="https://linkedin.com/in/yeniferprajapati" target='_blank'>
-          <h5>Yen's linkedin</h5>
+          <h4>Learn more about me!</h4>
         </a>
         </p>
+        <p class= "creator">Copyright © Yenifer A. Prajapati. 2017 All Rights Reserved</p>
     </footer>
   </div>
 </div>
