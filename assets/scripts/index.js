@@ -28,8 +28,10 @@ $(() => {
  $('.play').hide();
  //After sign in click-submit-> Show play section
  $('.signInNow').on ('click',function (){
- $('.play').show();
- });
+    $('.play').show();
+
+  });
+//
  //After sign out click-> Hide play section
 $('.out').on ('click', function (){
   $('.play').hide();
@@ -75,7 +77,7 @@ const checkWinning = function () {
       board[0]=== player1 && board[3]=== player1 && board[6]=== player1 ||
       board[1]=== player1 && board[4]=== player1 && board[7]=== player1 ||
       board[2]=== player1 && board[5]=== player1 && board[8]=== player1) {
- console.log('X wins');
+
  $('.message').text ('X is the winner!');
  return true;
  } else if (
@@ -87,11 +89,11 @@ const checkWinning = function () {
        board[0]=== player2 && board[3]=== player2 && board[6]=== player2 ||
        board[1]=== player2 && board[4]=== player2 && board[7]=== player2 ||
        board[2]=== player2 && board[5]=== player2 && board[8]=== player2) {
-  console.log ('O wins');
+
   $('.message').text ('O is the winner!');
   return true;
 } else if (board.includes ('') === false) {
-   console.log ('Draw');
+
    $('.message').text ('It is a draw!');
   }
  };
@@ -110,7 +112,7 @@ const checkWinning = function () {
    checkWinning();
    dontClick(checkWinning());
    }
-    console.log(board);
+    // console.log(board);
  });
 //reset button function to start new game
  $('#reset').on('click', function(){
@@ -123,7 +125,7 @@ const checkWinning = function () {
      checkWinning();
      dontClick(checkWinning());
      }
-      console.log(board);
+      // console.log(board);
    });
  });
 

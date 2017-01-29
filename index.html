@@ -9,16 +9,16 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
 
-  <body class="container-fluid">
-  <div class="jumbotron">
-      <div class="container">
-        <h1>World Tic-Tac-Toe!</h1>
-        <p>Enjoy the old-school time-killer game!</p>
+  <body>
+  <div class ="container">
+   <div class="jumbotron">
+      <h1>World Tic-Tac-Toe!</h1>
+      <p>Enjoy the old-school time-killer game!</p>
 <!-- Buttons to sign up and sign in -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalUp" data-whatever="@mdo">Sign Up!</button>
-<button type="button" class="btn btn-primary" id="getAll" data-toggle="modal" data-target="#exampleModalIn" data-whatever="@fat">Sign In!</button>
-<!--Modal form to sign Up!  -->
-<div class="modal fade" id="exampleModalUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalUp" data-whatever="@mdo">Sign Up!</button>
+  <button type="button" class="btn btn-primary" id="getAll" data-toggle="modal" data-target="#exampleModalIn" data-whatever="@fat">Sign In!</button>
+  <!--Modal form to sign Up!  -->
+  <div class="modal fade" id="exampleModalUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -45,8 +45,8 @@
     </div>
   </div>
 </div>
-<!--Modal form to Sign in!  -->
-<div class="modal fade" id="exampleModalIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <!--Modal form to Sign in!  -->
+  <div class="modal fade" id="exampleModalIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -66,7 +66,7 @@
           </fieldset>
         </form>
       </div>
-<!--Modal sign in footer  -->
+      <!--Modal sign in footer  -->
       <div class="modal-footer">
         <h4 class="modal-title " id="exampleModalLabel-change">Or, change your password before playing!</h4>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalChange" data-whatever="@getbootstrap">Change Password!</button>
@@ -98,9 +98,8 @@
     </div>
   </div>
 </div>
-      </div>
-    </div>
 <!--Board and game buttons section -->
+<div class = container-game>
 <div class ="play">
     <!--Sign out -->
     <form id="sign-out">
@@ -138,6 +137,8 @@
           <button class="btn btn-primary hd" id="getGames">Get games played!</button>
           <div class= "show-games-played" id="showGames"></div>
   </div>
+  </div>
+</div>
   <footer>
       <p>Copyright © Yenifer A. Prajapati. 2017 All Rights Reserved</p>
       <p>
@@ -149,7 +150,7 @@
         </a>
         </p>
     </footer>
+  </div>
 </div>
-
   </body>
 </html>
