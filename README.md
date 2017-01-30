@@ -18,11 +18,12 @@
   - A small light: A diagram of a work flow designed by one of our instructors, helped me create my own. So, hands on pen and paper and started writing down the logic to create the game. I also decided to defeat the fear and make js my friend :)
   Here is the logic:
 
-      -Create a js file and set the variables needed (Board and players)
-      -Functions needed: Turns
-                         Winning sets - Not DRY
-                         Reset game
-                         Disable turns when a winning set is true.
+      - Create a js file and set the variables needed (Board and players)
+      - Functions needed:
+                         - Turns
+                         - Winning sets - Not DRY
+                         - Reset game
+                         - Disable turns when a winning set is true.
       -Console.log most of the sections in the functions to test them.
 
   - Again in the dark: Many of the functions I created were not working at first, because I was not structuring them correctly; for instance, I had no return on some of them when it was a must, I was also not referencing the correct variables. So, I gave up on my self-sufficiency and reached out to the other developers in my cohort.
@@ -38,8 +39,8 @@
 
 - Unsolved problems
 
-- I believe my winning function could be actually changed into a helper function and using it as a callback.
-- Avoid jumbotron.
+  - I believe my winning function could be actually changed into a helper function and using it as a callback.
+  - Avoid jumbotron.
 
 
 - Wireframes link

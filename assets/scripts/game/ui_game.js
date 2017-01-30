@@ -9,12 +9,12 @@ const failure = (error) => {
   console.error(error);
 };
 
-const patching = (data) => {
-  if (data) {
-    console.log('It patched!!!'); }
+const showGamesTotal = (data) => {
+$('h2').text('You killed time '+ data.games.length + ' times!');
 };
+
 module.exports = {
   failure,
   success,
-  patching,
+  showGamesTotal,
 };

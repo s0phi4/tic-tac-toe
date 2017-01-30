@@ -1,7 +1,6 @@
 'use strict';
 const config = require('../config');
 const store = require('../store');
-const ticStore = require('../tictacstore');
 
 //get games
 const index = function () {
@@ -10,7 +9,7 @@ const index = function () {
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`,
-    },
+    }
   });
 };
 //create game
@@ -20,21 +19,21 @@ const createGame = function () {
     method: 'POST',
     headers: {
       Authorization: `Token token=${store.user.token}`,
-    },
+    }
   });
 };
 
-const showGame = function (id) {
+const showGame = function () {
   return $.ajax({
-    url: config.apiOrigin + '/games/' + id,
+    url: config.apiOrigin + '/games/',
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`,
-    },
+    }
   });
 };
 //Update
-const updateGame = function(id, currentPlayer, over) {
+const updateGame = function(id, index, currentPlayer,over) {
   return $.ajax ({
     url: config.apiOrigin + '/games/' + id,
     method: 'PATCH',
@@ -47,7 +46,7 @@ const updateGame = function(id, currentPlayer, over) {
           "index": index,
           "value": currentPlayer,
         },
-        "over": over,
+        "over": over
       }
     }
   });

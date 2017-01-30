@@ -16,7 +16,6 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-
   api.signIn(data)
   .then((response) => {
      store.user = response.user;
@@ -29,9 +28,7 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault();
-
   let data = getFormFields(event.target);
-
   api.changePassword(data)
     .then(ui.success)
     .catch(ui.failure)
@@ -40,7 +37,6 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault();
-
   api.signOut()
   .then(() => {
     delete store.user;
