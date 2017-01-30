@@ -11,7 +11,7 @@
   Protocols: REST
   Data format: JSON
 
-- Development process - A true story!
+- Development process - A true story!!!
 
   - Lost in space: Once I saw the assignment, I had a hard time structuring a work flow. I first worked on the HTML and was trying to get the board and things printed on the screen. I knew I had to work on my functions but was afraid to start because I had no clear direction and javascript scared me.
 

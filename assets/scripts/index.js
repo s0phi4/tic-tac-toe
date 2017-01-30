@@ -109,7 +109,7 @@ const checkWinning = function () {
      board[i] = '';
      $('.sq').text('');
      $('.message').text ('');
-     currentPlayer = 'X';
+    //  currentPlayer = 'X';
    }
    //Enable click function and turns PATCH
    squares.on ('click', function (event) {
