@@ -8,7 +8,21 @@ if (data) {
 
 const failureSignUp = (error) => {
 if (error) {
-  $('.next').text('Great! Now exit this box, sign in and kill some time!');
+  $('.next').text('Nope, you used this account already, try with a different account!');
+  }
+};
+
+const successSignIn = (data) => {
+if (data) {
+    $('.nextIn').text("Great! Let's kill some time!");
+    $('#reset').show();
+    $('#getGames').show();
+  }
+};
+
+const failureSignIn = (error) => {
+if (error) {
+  $('.nextIn').text('Nope, please use the right email and password');
   }
 };
 
@@ -16,4 +30,6 @@ if (error) {
 module.exports = {
   failureSignUp,
   successSignUp,
+  successSignIn,
+  failureSignIn,
 };

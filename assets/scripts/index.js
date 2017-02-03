@@ -27,15 +27,15 @@ $(() => {
 //Hides play section
  $('.play').hide();
 
- //After sign up-Hide sign up box
- $('.su').on('click', function() {
-  //  $('.next').text('Great! Now exit this box, sign in and kill some time!');
- });
+ // //After sign up-Hide sign up box
+ // $('.su').on('click', function() {
+ //  //  $('.next').text('Great! Now exit this box, sign in and kill some time!');
+ // });
  //After sign in click-submit-> Show play section
- $('.signInNow').on ('click',function (){
-    $('.play').show();
-    $('.top').hide();
-  });
+ // $('.signInNow').on ('click',function (){
+ //    $('.play').show();
+ //    $('.top').hide();
+  // });
 
  //After sign out click-> Hide play section
  $('.out').on ('click', function (){
