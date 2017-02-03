@@ -1,15 +1,19 @@
  'use strict';
 
-const success = (data) => {
+const successSignUp = (data) => {
 if (data) {
-  console.log(data);}
+  $('.next').text('Great! Now exit this box, sign in and kill some time!');
+  }
 };
 
-const failure = (error) => {
-  console.error(error);
+const failureSignUp = (error) => {
+if (error) {
+  $('.next').text('Great! Now exit this box, sign in and kill some time!');
+  }
 };
+
 
 module.exports = {
-  failure,
-  success,
+  failureSignUp,
+  successSignUp,
 };
