@@ -5,7 +5,7 @@
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
 const apiGame = require('./game/api_game');
-const store = require('./store');
+// const store = require('./store');
 $(() => {
   setAPIOrigin(location, config);
 });
@@ -25,7 +25,7 @@ $(() => {
   events_game.gameHandlers();
 
 //Hides play section
- $('.play').hide();
+ // $('.play').hide();
 
  // //After sign up-Hide sign up box
  // $('.su').on('click', function() {
@@ -38,11 +38,11 @@ $(() => {
   // });
 
  //After sign out click-> Hide play section
- $('.out').on ('click', function (){
-   $('.play').hide();
-   $('.top').show();
-  //  $('#getGames').on('click',onUpdateGame);
- });
+ // $('.out').on ('click', function (){
+ //   $('.play').hide();
+ //   $('.top').show();
+ //  //  $('#getGames').on('click',onUpdateGame);
+ // });
 
 });
 
@@ -54,7 +54,12 @@ let player2 = 'O';
 let currentPlayer = player1;
 //Declaring a variable using jquery-referencing sq class from index.html to interact with browser
 let squares = $('.sq');
-
+//Disable click function
+ let dontClick = function (checkWinning) {
+   if (checkWinning === true) {
+     $(".sq").off('click');
+   }
+ };
 
 //Winning function- winning sets for X and O + draw
 const checkWinning = function () {
@@ -69,6 +74,7 @@ const checkWinning = function () {
       board[2]=== player1 && board[5]=== player1 && board[8]=== player1) {
 
  $('.message').text ('X is the winner!');
+ dontClick();
  return true;
  } else if (
        board[0]=== player2 && board[1]=== player2 && board[2]=== player2 ||
@@ -81,28 +87,39 @@ const checkWinning = function () {
        board[2]=== player2 && board[5]=== player2 && board[8]=== player2) {
 
   $('.message').text ('O is the winner!');
+  dontClick();
   return true;
 } else if (board.includes ('') === false) {
    $('.message').text ('It is a draw!');
+   dontClick();
+   return true;
   }
  };
-
+let over = false;
  // Turns function
  let turns = function(index) {
    if (board[index] === '') {
      board[index]= currentPlayer;
-   } if (currentPlayer === 'X') {
+     over = checkWinning();
+     apiGame.updateGame(index, currentPlayer, over);
+   if (currentPlayer === 'X') {
      currentPlayer = 'O';
-   } else {
-   currentPlayer = 'X';
- }
- };
- //Disable click function
-  let dontClick = function (checkWinning) {
-    if (checkWinning === true) {
-      $(".sq").off('click');
+   } else if (currentPlayer === 'O'){
+     currentPlayer = 'X';
     }
-  };
+  }
+ };
+
+   //Enable click function and turns
+   let playGame = function (){
+   squares.on ('click', function (event) {
+     if ($(event.target).text() === '') {
+       $(event.target).text(currentPlayer);
+    }
+     turns (parseInt(event.target.id));
+    });
+ };
+
  //Reset function that returns empty board and empty message after game played
  const resetGame = function () {
    for (let i = 0; i < board.length; i++) {
@@ -110,34 +127,12 @@ const checkWinning = function () {
      $('.sq').text('');
      $('.message').text ('');
      currentPlayer = 'X';
-   }
-   //Enable click function and turns PATCH
-   squares.on ('click', function (event) {
-     if ($(event.target).text() === '') {
-       $(event.target).text(currentPlayer);
-       board[(event.target.id)] = currentPlayer;
-       apiGame.updateGame(store.game.id, event.target.id, currentPlayer,checkWinning());
-     turns ();
-     checkWinning();
-     dontClick(checkWinning());
-     }
-   });
+   } playGame();
  };
-
-//reset button function to start new game
- $('#reset').on('click',function(){
+ $('#reset').on('click', function() {
    resetGame();
-   squares.on ('click', function (event) {
-     if ($(event.target).text() === '') {
-       let idNumber = (event.target.id);
-       $(event.target).text(currentPlayer);
-     turns (idNumber);
-     checkWinning();
-     dontClick(checkWinning());
-     }
-      // console.log(board);
-   });
  });
+
 
 
 
@@ -146,6 +141,7 @@ const checkWinning = function () {
    checkWinning,
    turns,
    dontClick,
+   playGame,
    resetGame,
 
 

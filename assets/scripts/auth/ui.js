@@ -12,18 +12,31 @@ if (error) {
   }
 };
 
-const successSignIn = (data) => {
-if (data) {
+const successSignIn = () => {
     $('.nextIn').text("Great! Let's kill some time!");
+    $('#sign-up').val('');
+    $('#sign-in').val('');
+    // $('.play').hide();
+    // $('#sign-up').hide();
+    // $('#sign-in').hide();
     $('#reset').show();
     $('#getGames').show();
-  }
-};
+    // $('#change-password').show();
+    $('#sign-out').show();
+  };
 
 const failureSignIn = (error) => {
 if (error) {
   $('.nextIn').text('Nope, please use the right email and password');
   }
+};
+
+const successSignOut = () => {
+    $('.out').on ('click', function (){
+      $('.play').hide();
+      $('.top').show();
+     //  $('#getGames').on('click',onUpdateGame);
+  });
 };
 
 
@@ -32,4 +45,5 @@ module.exports = {
   successSignUp,
   successSignIn,
   failureSignIn,
+  successSignOut,
 };

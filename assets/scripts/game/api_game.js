@@ -13,13 +13,14 @@ const index = function () {
   });
 };
 //create game
-const createGame = function () {
+const createGame = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',
     headers: {
       Authorization: `Token token=${store.user.token}`,
-    }
+    },
+    data
   });
 };
 
@@ -33,9 +34,9 @@ const showGame = function () {
   });
 };
 //Update
-const updateGame = function(id, index, currentPlayer,over) {
+const updateGame = function( index, currentPlayer,status) {
   return $.ajax ({
-    url: config.apiOrigin + '/games/' + id,
+    url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
@@ -46,7 +47,7 @@ const updateGame = function(id, index, currentPlayer,over) {
           "index": index,
           "value": currentPlayer,
         },
-        "over": over
+        "over": status
       }
     }
   });
