@@ -34,13 +34,10 @@ const onShowGame = function (event) {
 
 const gameHandlers = function () {
   $('#getGames').on('click', onIndex);
-  $('#reset ').on('click', onCreateGame);
+  $('#reset').on('click', onCreateGame);
   $('#getGames').on ('click', onShowGame);
 };
 module.exports = {
   gameHandlers,
-  onIndex,
-  onCreateGame,
-  onShowGame,
 };
 //

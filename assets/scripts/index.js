@@ -49,42 +49,40 @@ $(() => {
 //Game Logic starts here
 //Declaring variables for board, and players
 const board = ['','','','','','','','',''];
-let player1 = 'X';
-let player2 = 'O';
-let currentPlayer = player1;
+// let player1 = 'X';
+// let player2 = 'O';
+let currentPlayer = "X";
 //Declaring a variable using jquery-referencing sq class from index.html to interact with browser
 let squares = $('.sq');
 //Disable click function
- let dontClick = function (checkWinning) {
-   if (checkWinning === true) {
+ let dontClick = function () {
      $(".sq").off('click');
-   }
  };
 
 //Winning function- winning sets for X and O + draw
 const checkWinning = function () {
   if(
-      board[0]=== player1 && board[1]=== player1 && board[2]=== player1 ||
-      board[3]=== player1 && board[4]=== player1 && board[5]=== player1 ||
-      board[6]=== player1 && board[7]=== player1 && board[8]=== player1 ||
-      board[0]=== player1 && board[4]=== player1 && board[8]=== player1 ||
-      board[2]=== player1 && board[4]=== player1 && board[6]=== player1 ||
-      board[0]=== player1 && board[3]=== player1 && board[6]=== player1 ||
-      board[1]=== player1 && board[4]=== player1 && board[7]=== player1 ||
-      board[2]=== player1 && board[5]=== player1 && board[8]=== player1) {
+      board[0]=== "X" && board[1]=== "X" && board[2]=== "X" ||
+      board[3]=== "X" && board[4]=== "X" && board[5]=== "X" ||
+      board[6]=== "X" && board[7]=== "X" && board[8]=== "X" ||
+      board[0]=== "X" && board[4]=== "X" && board[8]=== "X" ||
+      board[2]=== "X" && board[4]=== "X" && board[6]=== "X" ||
+      board[0]=== "X" && board[3]=== "X" && board[6]=== "X" ||
+      board[1]=== "X" && board[4]=== "X" && board[7]=== "X" ||
+      board[2]=== "X" && board[5]=== "X" && board[8]=== "X") {
 
  $('.message').text ('X is the winner!');
  dontClick();
  return true;
  } else if (
-       board[0]=== player2 && board[1]=== player2 && board[2]=== player2 ||
-       board[3]=== player2 && board[4]=== player2 && board[5]=== player2 ||
-       board[6]=== player2 && board[7]=== player2 && board[8]=== player2 ||
-       board[0]=== player2 && board[4]=== player2 && board[8]=== player2 ||
-       board[2]=== player2 && board[4]=== player2 && board[6]=== player2 ||
-       board[0]=== player2 && board[3]=== player2 && board[6]=== player2 ||
-       board[1]=== player2 && board[4]=== player2 && board[7]=== player2 ||
-       board[2]=== player2 && board[5]=== player2 && board[8]=== player2) {
+       board[0]=== "O" && board[1]=== "O" && board[2]=== "O" ||
+       board[3]=== "O" && board[4]=== "O" && board[5]=== "O" ||
+       board[6]=== "O" && board[7]=== "O" && board[8]=== "O" ||
+       board[0]=== "O" && board[4]=== "O" && board[8]=== "O" ||
+       board[2]=== "O" && board[4]=== "O" && board[6]=== "O" ||
+       board[0]=== "O" && board[3]=== "O" && board[6]=== "O" ||
+       board[1]=== "O" && board[4]=== "O" && board[7]=== "O" ||
+       board[2]=== "O" && board[5]=== "O" && board[8]=== "O") {
 
   $('.message').text ('O is the winner!');
   dontClick();
@@ -102,10 +100,10 @@ let over = false;
      board[index]= currentPlayer;
      over = checkWinning();
      apiGame.updateGame(index, currentPlayer, over);
-   if (currentPlayer === 'X') {
-     currentPlayer = 'O';
-   } else if (currentPlayer === 'O'){
-     currentPlayer = 'X';
+   if (currentPlayer === "X") {
+     currentPlayer = "O";
+   } else if (currentPlayer === "O"){
+     currentPlayer = "X";
     }
   }
  };

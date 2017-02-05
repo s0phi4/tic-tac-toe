@@ -5,7 +5,7 @@ if (data) {
   $('.next').text('Great! Now exit this box, sign in and kill some time!');
   }
 };
-
+// $('sign-up').hide().val('');
 const failureSignUp = (error) => {
 if (error) {
   $('.next').text('Nope, you used this account already, try with a different account!');
@@ -16,12 +16,12 @@ const successSignIn = () => {
     $('.nextIn').text("Great! Let's kill some time!");
     $('#sign-up').val('');
     $('#sign-in').val('');
-    // $('.play').hide();
-    // $('#sign-up').hide();
-    // $('#sign-in').hide();
+    $('.play').show();
+    $('#board').hide();
+    $('.top').hide();
+    $('h2').hide();
     $('#reset').show();
     $('#getGames').show();
-    // $('#change-password').show();
     $('#sign-out').show();
   };
 
@@ -32,11 +32,9 @@ if (error) {
 };
 
 const successSignOut = () => {
-    $('.out').on ('click', function (){
+    // $('.out').on ('click', function (){
       $('.play').hide();
       $('.top').show();
-     //  $('#getGames').on('click',onUpdateGame);
-  });
 };
 
 
