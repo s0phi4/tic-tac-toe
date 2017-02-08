@@ -1,7 +1,9 @@
  'use strict';
 
 const successSignUp = () => {
-  $('#sign-up').hide().val('');
+  $('#exampleModalUp').modal('hide');
+  $('.signup-clean').val('');
+  $('.next').text('');
 };
 
 const failureSignUp = (error) => {
@@ -34,15 +36,19 @@ if (error) {
 };
 
 const succesChangePassword = () =>  {
-    $('.clean-change').val('');
+$('#changeP').text('Great! Change is successful!');
 };
 
 const successSignOut = () => {
-    // $('.out').on ('click', function (){
       $('.play').hide();
       $('.pass').hide();
       $('.top').show();
+};
 
+const failureSignOut = () => {
+  $('.play').hide();
+  $('.pass').hide();
+  $('.top').show();
 
 };
 
@@ -54,4 +60,5 @@ module.exports = {
   failureSignIn,
   succesChangePassword,
   successSignOut,
+  failureSignOut,
 };

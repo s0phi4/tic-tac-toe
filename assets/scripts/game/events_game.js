@@ -36,6 +36,7 @@ const gameHandlers = function () {
   $('#getGames').on('click', onIndex);
   $('#reset').on('click', onCreateGame);
   $('#getGames').on ('click', onShowGame);
+
 };
 module.exports = {
   gameHandlers,

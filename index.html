@@ -29,19 +29,21 @@
             <h4 class="modal-title" id="exampleModalLabel">Create an account!</h4>
             <label>
               Email
-              <input type = "text" name ="credentials[email]">
+              <input type = "text" name ="credentials[email]" class="signup-clean">
             </label>
             <label>
               Password
-              <input type ="password" name ="credentials[password]">
+              <input type ="password" name ="credentials[password]" class="signup-clean">
             </label>
             <label>
               Password Confirmation
-              <input type ="password" name ="credentials[password_confirmation]">
+              <input type ="password" name ="credentials[password_confirmation]" class="signup-clean">
             </label>
             <input type="submit" class="btn btn-primary su" name="submit" value="Sign up!">
+              <button type="button" class="btn btn-default" data-dismiss="modal" id="clean-signup">Close</button>
             <div class ="next"></div>
           </fieldset>
+
         </form>
       </div>
     </div>
@@ -91,11 +93,11 @@
                     <input type ="password" name ="passwords[new]" class="clean-change">
                   </label>
                   <input type="submit" class="btn btn-primary cpd" name="submit" value="Change Password!">
-                  <div class = "changep"></div>
+                  <div id = "changeP"></div>
                 </fieldset>
               </form>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="clean-in">Close</button>
             </div>
             </div>
           </div>
