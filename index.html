@@ -17,6 +17,7 @@
 <!-- Buttons to sign up and sign in -->
   <button type="button" class="btn btn-primary top" data-toggle="modal" data-target="#exampleModalUp" data-whatever="@mdo">Sign Up!</button>
   <button type="button" class="btn btn-primary top" id="getAll" data-toggle="modal" data-target="#exampleModalIn" data-whatever="@fat">Sign In!</button>
+  <button type="button" class="btn btn-primary pass" data-toggle="modal" data-target="#exampleModalChange" data-whatever="@getbootstrap">Change Password!</button>
   <!--Modal form to sign Up!  -->
   <div class="modal fade" id="exampleModalUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
@@ -57,23 +58,22 @@
             <h4 class="modal-title" id="exampleModalLabel">Let's play!</h4>
             <label>
               Email
-              <input type = "text" name ="credentials[email]">
+              <input type = "text" name ="credentials[email]" class="clean-signin">
             </label>
             <label>
               Password
-              <input type ="password" name ="credentials[password]">
+              <input type ="password" name ="credentials[password]" class="clean-signin">
             </label>
             <input type="submit" class="btn btn-primary signInNow" name="submit" value="Sign In!">
             <div class ="nextIn"></div>
           </fieldset>
         </form>
       </div>
-      <!--Modal sign in footer  -->
-      <div class="modal-footer">
-        <h4 class="modal-title " id="exampleModalLabel-change">Or, change your password before playing!</h4>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalChange" data-whatever="@getbootstrap">Change Password!</button>
-      </div>
-      <!--Modal Form to change password within sign in modal -->
+    </div>
+  </div>
+</div>
+
+  <!--Modal Form to change password modal -->
       <div class="modal fade" id="exampleModalChange" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -81,25 +81,25 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <form id="change-password">
                 <fieldset>
-                  <legend>Change Password!</legend>
+                  <h4 class="modal-title" id="exampleModalLabel">Change Password!</h4>
                   <label>
                     Current Password
-                    <input type = "password" name ="passwords[old]">
+                    <input type = "password" name ="passwords[old]" class="clean-change">
                   </label>
                   <label>
                     New Password
-                    <input type ="password" name ="passwords[new]">
+                    <input type ="password" name ="passwords[new]" class="clean-change">
                   </label>
-                  <input type="submit" class="btn btn-primary" name="submit" value="Change Password!">
+                  <input type="submit" class="btn btn-primary cpd" name="submit" value="Change Password!">
+                  <div class = "changep"></div>
                 </fieldset>
               </form>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+
+
 <!--Board and game buttons section -->
 <div class = "container game">
 <div class ="play">

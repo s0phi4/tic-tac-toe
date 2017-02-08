@@ -36,18 +36,18 @@ const showGame = function () {
 //Update
 const updateGame = function( index, currentPlayer,status) {
   return $.ajax ({
-    url: config.apiOrigin + '/games/' + store.game.id,
+    url: `${config.apiOrigin}/games/${store.game.id}`,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
     },
     data: {
-      "game": {
-        "cell": {
-          "index": index,
-          "value": currentPlayer,
+      game: {
+        cell: {
+          index: index,
+          value: currentPlayer
         },
-        "over": status
+        over: status
       }
     }
   });

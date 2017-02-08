@@ -1,11 +1,9 @@
  'use strict';
 
-const successSignUp = (data) => {
-if (data) {
-  $('.next').text('Great! Now exit this box, sign in and kill some time!');
-  }
+const successSignUp = () => {
+  $('#sign-up').hide().val('');
 };
-// $('sign-up').hide().val('');
+
 const failureSignUp = (error) => {
 if (error) {
   $('.next').text('Nope, you used this account already, try with a different account!');
@@ -13,15 +11,19 @@ if (error) {
 };
 
 const successSignIn = () => {
-    $('.nextIn').text("Great! Let's kill some time!");
     $('#sign-up').val('');
-    $('#sign-in').val('');
+    $('.clean-signin').val('');
+    // $('#sign-up').hide();
+    // $('#sign-in').hide();
+    $('#exampleModalIn').modal('hide');
     $('.play').show();
+    $('.pass').show();
     $('#board').hide();
     $('.top').hide();
     $('h2').hide();
     $('#reset').show();
     $('#getGames').show();
+    $('#change-password').show();
     $('#sign-out').show();
   };
 
@@ -34,7 +36,10 @@ if (error) {
 const successSignOut = () => {
     // $('.out').on ('click', function (){
       $('.play').hide();
+      $('.pass').hide();
       $('.top').show();
+
+
 };
 
 

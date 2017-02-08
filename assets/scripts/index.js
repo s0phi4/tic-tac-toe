@@ -142,5 +142,4 @@ let over = false;
    playGame,
    resetGame,
 
-
  };

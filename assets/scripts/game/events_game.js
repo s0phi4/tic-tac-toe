@@ -10,7 +10,7 @@ const onIndex = function (event) {
   event.preventDefault();
   api_game.index()
   .then((response) => {
-    save.game = response.game;
+    // save.game = response.game;
     $("#game-results").text("Games " + response.games.length);
   })
   .then(ui_game.success);
