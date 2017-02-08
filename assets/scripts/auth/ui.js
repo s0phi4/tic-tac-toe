@@ -33,6 +33,10 @@ if (error) {
   }
 };
 
+const succesChangePassword = () =>  {
+    $('.clean-change').val('');
+};
+
 const successSignOut = () => {
     // $('.out').on ('click', function (){
       $('.play').hide();
@@ -48,5 +52,6 @@ module.exports = {
   successSignUp,
   successSignIn,
   failureSignIn,
+  succesChangePassword,
   successSignOut,
 };
